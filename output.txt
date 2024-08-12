@@ -1,0 +1,4 @@
+failed to get console mode for stdout: The handle is invalid.
+failed to get console mode for stderr: The handle is invalid.
+NAME               	ID          	SIZE  	MODIFIED     
+deepseek-coder:1.3b	3ddd2d3fc8d2	776 MB	3 months ago	
