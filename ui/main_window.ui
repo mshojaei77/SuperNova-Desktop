@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>660</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Super Nova</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    QMainWindow { background-color: #FFFFFF; }
+    QWidget { color: #333333; }
+    QPushButton { background-color: #E0E0E0; border: 1px solid #CCCCCC; border-radius: 5px; padding: 10px; color: #333333; }
+    QPushButton:hover { background-color: #D0D0D0; }
+    QListWidget { background-color: #F5F5F5; border: 1px solid #CCCCCC; color: #333333; }
+    QListWidget::item { padding: 10px; }
+    QListWidget::item:selected { background-color: #E0E0E0; color: #333333; }
+    QTextEdit, QLineEdit { background-color: #FFFFFF; border: 1px solid #CCCCCC; border-radius: 5px; padding: 10px; color: #333333; }
+    QComboBox { background-color: #FFFFFF; border: 1px solid #CCCCCC; padding: 5px; color: #333333; }
+    QComboBox::drop-down { border-left: 1px solid #CCCCCC; }
+    QMenuBar { background-color: #F0F0F0; color: #333333; }
+    QMenuBar::item { padding: 5px 10px; color: #333333; }
+    QMenuBar::item:selected { background-color: #E0E0E0; }
+    QStatusBar { background-color: #F0F0F0; color: #333333; font-size: 12px; }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QWidget" name="leftSidebarWidget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QGroupBox" name="groupBoxChatHistory">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Chat History</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayoutChatHistory">
+          <item>
+           <widget class="QPushButton" name="newChatButton">
+            <property name="styleSheet">
+             <string notr="true">
+           QPushButton { text-align: left; border: 1px solid #CCCCCC; border-radius: 5px; background-color: #E0E0E0; color: #333333; }
+           QPushButton:hover { background-color: #D0D0D0; }
+          </string>
+            </property>
+            <property name="text">
+             <string>+ New chat</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QScrollArea" name="chatListScrollArea">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="widgetResizable">
+             <bool>true</bool>
+            </property>
+            <widget class="QWidget" name="scrollAreaWidgetContents_2">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>218</width>
+               <height>230</height>
+              </rect>
+             </property>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="clearConversationsButton">
+            <property name="text">
+             <string>Clear Conversations</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>path/to/trash-icon.png</normaloff>path/to/trash-icon.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBoxKnowledgeBase">
+            <property name="title">
+             <string>Knowledge Base</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayoutKnowledgeBase">
+             <item>
+              <widget class="QPushButton" name="uploadFilesButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>+ Upload Files</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="addUrlsButton">
+               <property name="text">
+                <string>+ Add Urls</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="takeScreenshotButton">
+               <property name="text">
+                <string>+ Add Screenshot</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QScrollArea" name="knowledgeListSrollArea">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>200</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="widgetResizable">
+                <bool>true</bool>
+               </property>
+               <widget class="QWidget" name="scrollAreaWidgetContents_3">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>198</width>
+                  <height>69</height>
+                 </rect>
+                </property>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="clearKnowledgeButton">
+               <property name="text">
+                <string>Clear Knowledge</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="mainContent" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <layout class="QVBoxLayout" name="mainContentLayout">
+       <item>
+        <widget class="QWidget" name="topBar" native="true">
+         <layout class="QHBoxLayout" name="topBarLayout">
+          <item>
+           <widget class="QComboBox" name="providerDropdown">
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="placeholderText" stdset="0">
+             <string>Select Provider</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ollama</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>OpenAI</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Groq</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Anthropic</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TogetherAI</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DeepSeek</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="modelDropdown">
+            <property name="placeholderText" stdset="0">
+             <string>Select Model</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>Gpt-2</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="chatDisplay">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="inputArea" native="true">
+         <layout class="QHBoxLayout" name="inputAreaLayout">
+          <item>
+           <widget class="QPushButton" name="voiceInputButton">
+            <property name="text">
+             <string>🎙</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="inputBox">
+            <property name="placeholderText">
+             <string>Send a message...</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="sendButton">
+            <property name="text">
+             <string>Send</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="rightSidebarWidget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QGroupBox" name="groupBoxTools">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Tools</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QScrollArea" name="toolsScrollArea">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::AdjustToContents</enum>
+            </property>
+            <property name="widgetResizable">
+             <bool>true</bool>
+            </property>
+            <widget class="QWidget" name="scrollAreaWidgetContents">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>181</width>
+               <height>311</height>
+              </rect>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <item>
+               <widget class="QCheckBox" name="dateTimeCheckBox">
+                <property name="text">
+                 <string>Data and Time</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="webSearchCheckBox">
+                <property name="text">
+                 <string>Web Search</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="articleSearchCheckBox">
+                <property name="text">
+                 <string>Article Search</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="imageSearchCheckBox">
+                <property name="text">
+                 <string>Image Search</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="socialMediaSearchCheckBox">
+                <property name="text">
+                 <string>Social Media Search</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="stockPriceInfoCheckBox">
+                <property name="text">
+                 <string>Stock Price Information</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="weatherInfoCheckBox">
+                <property name="text">
+                 <string>Weather Information</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="chartCreatorCheckBox">
+                <property name="text">
+                 <string>Chart Creator</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="calendarManagementCheckBox">
+                <property name="text">
+                 <string>Calendar Management</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="emailReaderCheckBox">
+                <property name="text">
+                 <string>Email Reader</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="shoppingRecommendationCheckBox">
+                <property name="text">
+                 <string>Shopping Recomendation</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="movieRecommendationCheckBox">
+                <property name="text">
+                 <string>Movie Recomendation</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="bookRecommendationCheckBox">
+                <property name="text">
+                 <string>Book Recomendation</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="toolsSetupButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Tools Setup</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBoxSettings">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Settings</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayoutSettings">
+          <item>
+           <widget class="QPushButton" name="localSetupButton">
+            <property name="text">
+             <string>Local Setup</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="providerSetupButton">
+            <property name="text">
+             <string>Provider Setup</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="modelSettingButton">
+            <property name="text">
+             <string>Model Setting</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="systemPromptButton">
+            <property name="text">
+             <string>System Prompt</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="exportConversationButton">
+            <property name="text">
+             <string>Export Conversations</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

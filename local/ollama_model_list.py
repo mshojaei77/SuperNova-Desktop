@@ -1,5 +1,5 @@
 import ollama
-from ollama_commands import show_models_list
+from local.ollama_manager import show_models_list
 import sys
 import logging
 from PyQt5.QtWidgets import (
